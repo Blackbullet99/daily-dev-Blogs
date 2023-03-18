@@ -1,5 +1,9 @@
 # daily-dev-blogs
 
+A Blog App That Authenticates users when signed in and users can only create a blogpost when they have an account
+
+View live preview [here](https://daily-dev-blogs-h1qg3b2kr-blackbullet99.vercel.app/)
+
 ## Project setup
 ```
 npm install
