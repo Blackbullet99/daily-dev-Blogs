@@ -38,14 +38,14 @@
         </div>
         <div class="col-2">
           <ul>
-            <router-link class="link" :to="{ name: 'home' }">Home</router-link>
-            <router-link class="link" :to="{ name: 'blogs' }"
+            <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
+            <router-link class="link" :to="{ name: 'Blogs' }"
               >Blogs</router-link
             >
-            <router-link v-if="user" class="link" :to="{ name: 'addpost' }"
+            <router-link v-if="user" class="link" to="#"
               >Add post</router-link
             >
-            <router-link v-if="!user" class="link" :to="{ name: 'login' }"
+            <router-link v-if="!user" class="link" :to="{ name: 'Login' }"
               >Login/Sign-up</router-link
             >
           </ul>
@@ -60,7 +60,8 @@
 
 <script>
 export default {
-  name: "footer-vue",
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "footerview",
   data() {
     return {};
   },

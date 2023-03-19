@@ -78,10 +78,11 @@ export default {
     input[type="checkbox"]:before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
       width: 30px;
       height: 30px;
+      border-radius: 20px;
+      top: 0;
+      left: 0;
       background: #303030;
       transform: scale(1.1);
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),

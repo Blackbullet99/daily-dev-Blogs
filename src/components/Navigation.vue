@@ -4,9 +4,10 @@
       <div class="branding">
         <router-link class="header" :to="{ name: 'Home' }">
           <img
-          alt="Home logo" 
-          src="../assets/Icons/logo.svg"
-          class="home-logo" />
+            alt="Home logo"
+            src="../assets/Icons/logo.svg"
+            class="home-logo"
+          />
           DailydevBlogs
         </router-link>
       </div>
@@ -15,7 +16,9 @@
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           <router-link class="link" :to="{ name: 'Blogs' }">Blogs</router-link>
           <router-link class="link" to="#">Add Post</router-link>
-          <router-link class="link" to="#">Login/Sign-up</router-link>
+          <router-link class="link" :to="{ name: 'Login' }"
+            >Login/Sign-up</router-link
+          >
         </ul>
       </div>
     </nav>
@@ -31,7 +34,9 @@
         <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         <router-link class="link" :to="{ name: 'Blogs' }">Blogs</router-link>
         <router-link class="link" to="#">Add Post</router-link>
-        <router-link class="link" to="#">Login/Sign-up</router-link>
+        <router-link class="link" :to="{ name: 'Login' }"
+          >Login/Sign-up</router-link
+        >
       </ul>
     </transition>
   </header>

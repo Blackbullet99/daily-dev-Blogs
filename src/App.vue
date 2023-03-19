@@ -1,29 +1,50 @@
 <template>
   <div class="app-wrapper">
     <div class="app">
-      <Navigation />
+      <Navigation v-if="!navigation" />
       <router-view />
-      <!-- <Footer /> -->
+      <footerview v-if="!navigation" />
     </div>
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation.vue";
-// import Footer from "./components/Footer.vue";
+import footerview from "./components/footer.vue";
 export default {
   name: "app",
   components: {
     Navigation,
-    // Footer,
+    footerview,
   },
   data() {
-    return {};
+    return {
+      navigation: null,
+    };
   },
-  created() {},
+  created() {
+    this.checkRoute();
+  },
   mounted() {},
-  methods: {},
-  watch: {},
+  methods: {
+    checkRoute() {
+      if (
+        this.$route.name === "Login" ||
+        this.$route.name === "SignUp" ||
+        this.$route.name === "ForgotPassword"
+      ) {
+        this.navigation = true;
+        return;
+      }
+
+      this.navigation = false;
+    },
+  },
+  watch: {
+    $route() {
+      this.checkRoute();
+    },
+  },
 };
 </script>
 
@@ -124,6 +145,12 @@ button,
   background-color: rgba(128, 128, 128, 0.5) !important;
 }
 
+.error {
+  text-align: center;
+  font-size: 12px;
+  color: red;
+}
+
 .blog-card-wrap {
   position: relative;
   padding: 80px 16px;
@@ -134,7 +161,7 @@ button,
 
   .blog-cards {
     display: grid;
-    gap: 2rem;
+    gap: 32px;
     grid-template-columns: 1fr;
 
     @media (min-width: 500px) {
